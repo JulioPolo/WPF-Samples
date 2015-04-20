@@ -2,10 +2,13 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:WPFDataSample" mc:Ignorable="d" x:Name="Paises_form" x:Class="WPFDataSample.Paises"
-        Title="Paises" Height="292.487" Width="444.417" Loaded="Paises1_Loaded" ResizeMode="NoResize">
+        Title="Paises" Height="292.487" Width="444.417" Loaded="Paises1_Loaded" ResizeMode="NoResize" Closing="Paises_form_Closing">
     <Window.Resources>
         <CollectionViewSource x:Key="util_PaisesViewSource" d:DesignSource="{d:DesignInstance {x:Type local:Util_Paises}, CreateList=True}"/>
     </Window.Resources>
+    <Window.DataContext>
+        <local:Util_Paises/>
+    </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="207*"/>
@@ -24,10 +27,10 @@
                 </LinearGradientBrush>
             </Border.Background>
             <StackPanel>
-                <Button x:Name="AddButton" Content="_Nuevo" HorizontalAlignment="Left" Height="32" Margin="9,10,0,0" VerticalAlignment="Top" Width="119" BorderThickness="0" Background="#00000000" BorderBrush="{x:Null}"/>
-                <Button x:Name="SaveButton" Content="_Guardar" HorizontalAlignment="Left" Height="32" Margin="9,10,0,0" VerticalAlignment="Top" Width="119" BorderThickness="0" Background="#00000000" BorderBrush="{x:Null}"/>
+                <Button x:Name="AddButton" Content="_Nuevo" HorizontalAlignment="Left" Height="32" Margin="9,10,0,0" VerticalAlignment="Top" Width="119" BorderThickness="0" Background="#00000000" BorderBrush="{x:Null}" Click="AddButton_Click"/>
+                <Button x:Name="SaveButton" Content="_Guardar" HorizontalAlignment="Left" Height="32" Margin="9,10,0,0" VerticalAlignment="Top" Width="119" BorderThickness="0" Background="#00000000" BorderBrush="{x:Null}" Click="SaveButton_Click"/>
                 <Button x:Name="DeleteButton" Content="_Eliminar" HorizontalAlignment="Left" Height="32" Margin="9,10,0,0" VerticalAlignment="Top" Width="119" BorderThickness="0" Background="#00000000" BorderBrush="{x:Null}"/>
-                <Button x:Name="ExitButton" Content="_Cancelar" HorizontalAlignment="Left" Height="32" Margin="9,10,0,0" VerticalAlignment="Top" Width="119" BorderThickness="0" Background="#00000000" BorderBrush="{x:Null}"/>
+                <Button x:Name="ExitButton" Content="_Cancelar" HorizontalAlignment="Left" Height="32" Margin="9,10,0,0" VerticalAlignment="Top" Width="119" BorderThickness="0" Background="#00000000" BorderBrush="{x:Null}" Click="ExitButton_Click"/>
             </StackPanel>
             
         </Border>

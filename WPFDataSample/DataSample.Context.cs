@@ -13,10 +13,10 @@ namespace WPFDataSample
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SIGACEF : DbContext
+    public partial class SIGACEntities : DbContext
     {
-        public SIGACEF()
-            : base("name=SIGACEF")
+        public SIGACEntities()
+            : base("name=SIGACEntities")
         {
         }
     

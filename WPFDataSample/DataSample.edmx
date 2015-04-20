@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="SIGACModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="SIGACModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Empresas">
           <Key>
             <PropertyRef Name="EmpresaId" />
@@ -426,7 +426,8 @@
             <End Role="Util_Dptos" EntitySet="Util_Dptos" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SIGACModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -455,9 +456,9 @@
           <NavigationProperty Name="Empresas_Admon" Relationship="Self.FK_Empresas_Admon_Empresas1" FromRole="Empresas" ToRole="Empresas_Admon" />
           <NavigationProperty Name="Empresas_Tipos" Relationship="Self.FK_Empresas_Empresas_Tipos1" FromRole="Empresas" ToRole="Empresas_Tipos" />
           <NavigationProperty Name="Empresas_Sucursales" Relationship="Self.FK_Empresas_Sucursales_Empresas" FromRole="Empresas" ToRole="Empresas_Sucursales" />
-          <NavigationProperty Name="Util_Ciudades" Relationship="SIGACModel.FK_Empresas_Util_Ciudades" FromRole="Empresas" ToRole="Util_Ciudades" />
-          <NavigationProperty Name="Util_Dptos" Relationship="SIGACModel.FK_Empresas_Util_Dptos" FromRole="Empresas" ToRole="Util_Dptos" />
-          <NavigationProperty Name="Util_Paises" Relationship="SIGACModel.FK_Empresas_Util_Paises" FromRole="Empresas" ToRole="Util_Paises" />
+          <NavigationProperty Name="Util_Ciudades" Relationship="Self.FK_Empresas_Util_Ciudades" FromRole="Empresas" ToRole="Util_Ciudades" />
+          <NavigationProperty Name="Util_Dptos" Relationship="Self.FK_Empresas_Util_Dptos" FromRole="Empresas" ToRole="Util_Dptos" />
+          <NavigationProperty Name="Util_Paises" Relationship="Self.FK_Empresas_Util_Paises" FromRole="Empresas" ToRole="Util_Paises" />
         </EntityType>
         <EntityType Name="Empresas_Admon">
           <Key>
@@ -504,9 +505,9 @@
           <Property Name="Modified" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
           <Property Name="Usuario" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Empresas" Relationship="Self.FK_Empresas_Sucursales_Empresas" FromRole="Empresas_Sucursales" ToRole="Empresas" />
-          <NavigationProperty Name="Util_Ciudades" Relationship="SIGACModel.FK_Empresas_Sucursales_Util_Ciudades" FromRole="Empresas_Sucursales" ToRole="Util_Ciudades" />
-          <NavigationProperty Name="Util_Dptos" Relationship="SIGACModel.FK_Empresas_Sucursales_Util_Dptos" FromRole="Empresas_Sucursales" ToRole="Util_Dptos" />
-          <NavigationProperty Name="Util_Paises" Relationship="SIGACModel.FK_Empresas_Sucursales_Util_Paises" FromRole="Empresas_Sucursales" ToRole="Util_Paises" />
+          <NavigationProperty Name="Util_Ciudades" Relationship="Self.FK_Empresas_Sucursales_Util_Ciudades" FromRole="Empresas_Sucursales" ToRole="Util_Ciudades" />
+          <NavigationProperty Name="Util_Dptos" Relationship="Self.FK_Empresas_Sucursales_Util_Dptos" FromRole="Empresas_Sucursales" ToRole="Util_Dptos" />
+          <NavigationProperty Name="Util_Paises" Relationship="Self.FK_Empresas_Sucursales_Util_Paises" FromRole="Empresas_Sucursales" ToRole="Util_Paises" />
         </EntityType>
         <EntityType Name="Empresas_Tipos">
           <Key>
@@ -542,9 +543,59 @@
           <Property Name="Modified" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
           <Property Name="Usuario" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Empresas_Admon" Relationship="Self.FK_Empresas_Admon_Personas" FromRole="Personas" ToRole="Empresas_Admon" />
-          <NavigationProperty Name="Util_Ciudades" Relationship="SIGACModel.FK_Personas_Util_Ciudades" FromRole="Personas" ToRole="Util_Ciudades" />
-          <NavigationProperty Name="Util_Dptos" Relationship="SIGACModel.FK_Personas_Util_Dptos" FromRole="Personas" ToRole="Util_Dptos" />
-          <NavigationProperty Name="Util_Paises" Relationship="SIGACModel.FK_Personas_Util_Paises" FromRole="Personas" ToRole="Util_Paises" />
+          <NavigationProperty Name="Util_Ciudades" Relationship="Self.FK_Personas_Util_Ciudades" FromRole="Personas" ToRole="Util_Ciudades" />
+          <NavigationProperty Name="Util_Dptos" Relationship="Self.FK_Personas_Util_Dptos" FromRole="Personas" ToRole="Util_Dptos" />
+          <NavigationProperty Name="Util_Paises" Relationship="Self.FK_Personas_Util_Paises" FromRole="Personas" ToRole="Util_Paises" />
+        </EntityType>
+        <EntityType Name="Util_Ciudades">
+          <Key>
+            <PropertyRef Name="PaisId" />
+            <PropertyRef Name="DptoId" />
+            <PropertyRef Name="CiudadId" />
+          </Key>
+          <Property Name="PaisId" Type="Int32" Nullable="false" />
+          <Property Name="DptoId" Type="Int32" Nullable="false" />
+          <Property Name="CiudadId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreCiudad" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Capital" Type="Boolean" />
+          <Property Name="GPSUbicacion" Type="Geography" />
+          <Property Name="Modified" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="Empresas" Relationship="Self.FK_Empresas_Util_Ciudades" FromRole="Util_Ciudades" ToRole="Empresas" />
+          <NavigationProperty Name="Empresas_Sucursales" Relationship="Self.FK_Empresas_Sucursales_Util_Ciudades" FromRole="Util_Ciudades" ToRole="Empresas_Sucursales" />
+          <NavigationProperty Name="Personas" Relationship="Self.FK_Personas_Util_Ciudades" FromRole="Util_Ciudades" ToRole="Personas" />
+          <NavigationProperty Name="Util_Dptos" Relationship="Self.FK_Util_Ciudades_Util_Dptos" FromRole="Util_Ciudades" ToRole="Util_Dptos" />
+        </EntityType>
+        <EntityType Name="Util_Dptos">
+          <Key>
+            <PropertyRef Name="PaisId" />
+            <PropertyRef Name="DptoId" />
+          </Key>
+          <Property Name="PaisId" Type="Int32" Nullable="false" />
+          <Property Name="DptoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DptoNombre" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Modified" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="Empresas" Relationship="Self.FK_Empresas_Util_Dptos" FromRole="Util_Dptos" ToRole="Empresas" />
+          <NavigationProperty Name="Empresas_Sucursales" Relationship="Self.FK_Empresas_Sucursales_Util_Dptos" FromRole="Util_Dptos" ToRole="Empresas_Sucursales" />
+          <NavigationProperty Name="Personas" Relationship="Self.FK_Personas_Util_Dptos" FromRole="Util_Dptos" ToRole="Personas" />
+          <NavigationProperty Name="Util_Ciudades" Relationship="Self.FK_Util_Ciudades_Util_Dptos" FromRole="Util_Dptos" ToRole="Util_Ciudades" />
+          <NavigationProperty Name="Util_Paises" Relationship="Self.FK_Util_Dptos_Util_Paises" FromRole="Util_Dptos" ToRole="Util_Paises" />
+        </EntityType>
+        <EntityType Name="Util_Paises">
+          <Key>
+            <PropertyRef Name="PaisId" />
+          </Key>
+          <Property Name="PaisId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombrePais" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ISO2" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="ISO3" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Web" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="UN" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="Modified" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="Empresas" Relationship="Self.FK_Empresas_Util_Paises" FromRole="Util_Paises" ToRole="Empresas" />
+          <NavigationProperty Name="Empresas_Sucursales" Relationship="Self.FK_Empresas_Sucursales_Util_Paises" FromRole="Util_Paises" ToRole="Empresas_Sucursales" />
+          <NavigationProperty Name="Personas" Relationship="Self.FK_Personas_Util_Paises" FromRole="Util_Paises" ToRole="Personas" />
+          <NavigationProperty Name="Util_Dptos" Relationship="Self.FK_Util_Dptos_Util_Paises" FromRole="Util_Paises" ToRole="Util_Dptos" />
         </EntityType>
         <Association Name="FK_Empresas_Admon_Empresas1">
           <End Role="Empresas" Type="Self.Empresas" Multiplicity="1" />
@@ -582,6 +633,48 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Empresas_Util_Ciudades">
+          <End Role="Util_Ciudades" Type="Self.Util_Ciudades" Multiplicity="0..1" />
+          <End Role="Empresas" Type="Self.Empresas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Util_Ciudades">
+              <PropertyRef Name="PaisId" />
+              <PropertyRef Name="DptoId" />
+              <PropertyRef Name="CiudadId" />
+            </Principal>
+            <Dependent Role="Empresas">
+              <PropertyRef Name="PaisId" />
+              <PropertyRef Name="DptoId" />
+              <PropertyRef Name="CiudadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empresas_Util_Dptos">
+          <End Role="Util_Dptos" Type="Self.Util_Dptos" Multiplicity="0..1" />
+          <End Role="Empresas" Type="Self.Empresas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Util_Dptos">
+              <PropertyRef Name="PaisId" />
+              <PropertyRef Name="DptoId" />
+            </Principal>
+            <Dependent Role="Empresas">
+              <PropertyRef Name="PaisId" />
+              <PropertyRef Name="DptoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empresas_Util_Paises">
+          <End Role="Util_Paises" Type="Self.Util_Paises" Multiplicity="0..1" />
+          <End Role="Empresas" Type="Self.Empresas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Util_Paises">
+              <PropertyRef Name="PaisId" />
+            </Principal>
+            <Dependent Role="Empresas">
+              <PropertyRef Name="PaisId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Empresas_Admon_Empresas_Admon_Tipos">
           <End Role="Empresas_Admon_Cargos" Type="Self.Empresas_Admon_Cargos" Multiplicity="1" />
           <End Role="Empresas_Admon" Type="Self.Empresas_Admon" Multiplicity="*" />
@@ -606,176 +699,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="SIGACEF" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Empresas" EntityType="Self.Empresas" />
-          <EntitySet Name="Empresas_Admon" EntityType="Self.Empresas_Admon" />
-          <EntitySet Name="Empresas_Admon_Cargos" EntityType="Self.Empresas_Admon_Cargos" />
-          <EntitySet Name="Empresas_Sucursales" EntityType="Self.Empresas_Sucursales" />
-          <EntitySet Name="Empresas_Tipos" EntityType="Self.Empresas_Tipos" />
-          <EntitySet Name="Personas" EntityType="Self.Personas" />
-          <AssociationSet Name="FK_Empresas_Admon_Empresas1" Association="Self.FK_Empresas_Admon_Empresas1">
-            <End Role="Empresas" EntitySet="Empresas" />
-            <End Role="Empresas_Admon" EntitySet="Empresas_Admon" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Empresas_Empresas_Tipos1" Association="Self.FK_Empresas_Empresas_Tipos1">
-            <End Role="Empresas_Tipos" EntitySet="Empresas_Tipos" />
-            <End Role="Empresas" EntitySet="Empresas" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Empresas_Sucursales_Empresas" Association="Self.FK_Empresas_Sucursales_Empresas">
-            <End Role="Empresas" EntitySet="Empresas" />
-            <End Role="Empresas_Sucursales" EntitySet="Empresas_Sucursales" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Empresas_Admon_Empresas_Admon_Tipos" Association="Self.FK_Empresas_Admon_Empresas_Admon_Tipos">
-            <End Role="Empresas_Admon_Cargos" EntitySet="Empresas_Admon_Cargos" />
-            <End Role="Empresas_Admon" EntitySet="Empresas_Admon" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Empresas_Admon_Personas" Association="Self.FK_Empresas_Admon_Personas">
-            <End Role="Personas" EntitySet="Personas" />
-            <End Role="Empresas_Admon" EntitySet="Empresas_Admon" />
-          </AssociationSet>
-          <EntitySet Name="Util_Ciudades" EntityType="SIGACModel.Util_Ciudades" />
-          <EntitySet Name="Util_Dptos" EntityType="SIGACModel.Util_Dptos" />
-          <EntitySet Name="Util_Paises" EntityType="SIGACModel.Util_Paises" />
-          <AssociationSet Name="FK_Empresas_Util_Ciudades" Association="SIGACModel.FK_Empresas_Util_Ciudades">
-            <End Role="Util_Ciudades" EntitySet="Util_Ciudades" />
-            <End Role="Empresas" EntitySet="Empresas" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Empresas_Util_Dptos" Association="SIGACModel.FK_Empresas_Util_Dptos">
-            <End Role="Util_Dptos" EntitySet="Util_Dptos" />
-            <End Role="Empresas" EntitySet="Empresas" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Empresas_Util_Paises" Association="SIGACModel.FK_Empresas_Util_Paises">
-            <End Role="Util_Paises" EntitySet="Util_Paises" />
-            <End Role="Empresas" EntitySet="Empresas" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Empresas_Sucursales_Util_Ciudades" Association="SIGACModel.FK_Empresas_Sucursales_Util_Ciudades">
-            <End Role="Util_Ciudades" EntitySet="Util_Ciudades" />
-            <End Role="Empresas_Sucursales" EntitySet="Empresas_Sucursales" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Empresas_Sucursales_Util_Dptos" Association="SIGACModel.FK_Empresas_Sucursales_Util_Dptos">
-            <End Role="Util_Dptos" EntitySet="Util_Dptos" />
-            <End Role="Empresas_Sucursales" EntitySet="Empresas_Sucursales" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Empresas_Sucursales_Util_Paises" Association="SIGACModel.FK_Empresas_Sucursales_Util_Paises">
-            <End Role="Util_Paises" EntitySet="Util_Paises" />
-            <End Role="Empresas_Sucursales" EntitySet="Empresas_Sucursales" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Personas_Util_Ciudades" Association="SIGACModel.FK_Personas_Util_Ciudades">
-            <End Role="Util_Ciudades" EntitySet="Util_Ciudades" />
-            <End Role="Personas" EntitySet="Personas" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Personas_Util_Dptos" Association="SIGACModel.FK_Personas_Util_Dptos">
-            <End Role="Util_Dptos" EntitySet="Util_Dptos" />
-            <End Role="Personas" EntitySet="Personas" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Personas_Util_Paises" Association="SIGACModel.FK_Personas_Util_Paises">
-            <End Role="Util_Paises" EntitySet="Util_Paises" />
-            <End Role="Personas" EntitySet="Personas" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Util_Ciudades_Util_Dptos" Association="SIGACModel.FK_Util_Ciudades_Util_Dptos">
-            <End Role="Util_Dptos" EntitySet="Util_Dptos" />
-            <End Role="Util_Ciudades" EntitySet="Util_Ciudades" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Util_Dptos_Util_Paises" Association="SIGACModel.FK_Util_Dptos_Util_Paises">
-            <End Role="Util_Paises" EntitySet="Util_Paises" />
-            <End Role="Util_Dptos" EntitySet="Util_Dptos" />
-          </AssociationSet>
-        </EntityContainer>
-        <EntityType Name="Util_Ciudades">
-          <Key>
-            <PropertyRef Name="PaisId" />
-            <PropertyRef Name="DptoId" />
-            <PropertyRef Name="CiudadId" />
-          </Key>
-          <Property Name="PaisId" Type="Int32" Nullable="false" />
-          <Property Name="DptoId" Type="Int32" Nullable="false" />
-          <Property Name="CiudadId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NombreCiudad" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" />
-          <Property Name="Capital" Type="Boolean" />
-          <Property Name="GPSUbicacion" Type="Geography" />
-          <Property Name="Modified" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
-          <NavigationProperty Name="Empresas" Relationship="SIGACModel.FK_Empresas_Util_Ciudades" FromRole="Util_Ciudades" ToRole="Empresas" />
-          <NavigationProperty Name="Empresas_Sucursales" Relationship="SIGACModel.FK_Empresas_Sucursales_Util_Ciudades" FromRole="Util_Ciudades" ToRole="Empresas_Sucursales" />
-          <NavigationProperty Name="Personas" Relationship="SIGACModel.FK_Personas_Util_Ciudades" FromRole="Util_Ciudades" ToRole="Personas" />
-          <NavigationProperty Name="Util_Dptos" Relationship="SIGACModel.FK_Util_Ciudades_Util_Dptos" FromRole="Util_Ciudades" ToRole="Util_Dptos" />
-        </EntityType>
-        <EntityType Name="Util_Dptos">
-          <Key>
-            <PropertyRef Name="PaisId" />
-            <PropertyRef Name="DptoId" />
-          </Key>
-          <Property Name="PaisId" Type="Int32" Nullable="false" />
-          <Property Name="DptoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="DptoNombre" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" />
-          <Property Name="Modified" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
-          <NavigationProperty Name="Empresas" Relationship="SIGACModel.FK_Empresas_Util_Dptos" FromRole="Util_Dptos" ToRole="Empresas" />
-          <NavigationProperty Name="Empresas_Sucursales" Relationship="SIGACModel.FK_Empresas_Sucursales_Util_Dptos" FromRole="Util_Dptos" ToRole="Empresas_Sucursales" />
-          <NavigationProperty Name="Personas" Relationship="SIGACModel.FK_Personas_Util_Dptos" FromRole="Util_Dptos" ToRole="Personas" />
-          <NavigationProperty Name="Util_Ciudades" Relationship="SIGACModel.FK_Util_Ciudades_Util_Dptos" FromRole="Util_Dptos" ToRole="Util_Ciudades" />
-          <NavigationProperty Name="Util_Paises" Relationship="SIGACModel.FK_Util_Dptos_Util_Paises" FromRole="Util_Dptos" ToRole="Util_Paises" />
-        </EntityType>
-        <EntityType Name="Util_Paises">
-          <Key>
-            <PropertyRef Name="PaisId" />
-          </Key>
-          <Property Name="PaisId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NombrePais" Type="String" Nullable="false" MaxLength="75" FixedLength="false" Unicode="false" />
-          <Property Name="ISO2" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="ISO3" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
-          <Property Name="Web" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
-          <Property Name="UN" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
-          <Property Name="Phone" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
-          <Property Name="Modified" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
-          <NavigationProperty Name="Empresas" Relationship="SIGACModel.FK_Empresas_Util_Paises" FromRole="Util_Paises" ToRole="Empresas" />
-          <NavigationProperty Name="Empresas_Sucursales" Relationship="SIGACModel.FK_Empresas_Sucursales_Util_Paises" FromRole="Util_Paises" ToRole="Empresas_Sucursales" />
-          <NavigationProperty Name="Personas" Relationship="SIGACModel.FK_Personas_Util_Paises" FromRole="Util_Paises" ToRole="Personas" />
-          <NavigationProperty Name="Util_Dptos" Relationship="SIGACModel.FK_Util_Dptos_Util_Paises" FromRole="Util_Paises" ToRole="Util_Dptos" />
-        </EntityType>
-        <Association Name="FK_Empresas_Util_Ciudades">
-          <End Type="SIGACModel.Util_Ciudades" Role="Util_Ciudades" Multiplicity="0..1" />
-          <End Type="SIGACModel.Empresas" Role="Empresas" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Util_Ciudades">
-              <PropertyRef Name="PaisId" />
-              <PropertyRef Name="DptoId" />
-              <PropertyRef Name="CiudadId" />
-            </Principal>
-            <Dependent Role="Empresas">
-              <PropertyRef Name="PaisId" />
-              <PropertyRef Name="DptoId" />
-              <PropertyRef Name="CiudadId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Empresas_Util_Dptos">
-          <End Type="SIGACModel.Util_Dptos" Role="Util_Dptos" Multiplicity="0..1" />
-          <End Type="SIGACModel.Empresas" Role="Empresas" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Util_Dptos">
-              <PropertyRef Name="PaisId" />
-              <PropertyRef Name="DptoId" />
-            </Principal>
-            <Dependent Role="Empresas">
-              <PropertyRef Name="PaisId" />
-              <PropertyRef Name="DptoId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Empresas_Util_Paises">
-          <End Type="SIGACModel.Util_Paises" Role="Util_Paises" Multiplicity="0..1" />
-          <End Type="SIGACModel.Empresas" Role="Empresas" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Util_Paises">
-              <PropertyRef Name="PaisId" />
-            </Principal>
-            <Dependent Role="Empresas">
-              <PropertyRef Name="PaisId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Empresas_Sucursales_Util_Ciudades">
-          <End Type="SIGACModel.Util_Ciudades" Role="Util_Ciudades" Multiplicity="1" />
-          <End Type="SIGACModel.Empresas_Sucursales" Role="Empresas_Sucursales" Multiplicity="*" />
+          <End Role="Util_Ciudades" Type="Self.Util_Ciudades" Multiplicity="1" />
+          <End Role="Empresas_Sucursales" Type="Self.Empresas_Sucursales" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Util_Ciudades">
               <PropertyRef Name="PaisId" />
@@ -790,8 +716,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Empresas_Sucursales_Util_Dptos">
-          <End Type="SIGACModel.Util_Dptos" Role="Util_Dptos" Multiplicity="1" />
-          <End Type="SIGACModel.Empresas_Sucursales" Role="Empresas_Sucursales" Multiplicity="*" />
+          <End Role="Util_Dptos" Type="Self.Util_Dptos" Multiplicity="1" />
+          <End Role="Empresas_Sucursales" Type="Self.Empresas_Sucursales" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Util_Dptos">
               <PropertyRef Name="PaisId" />
@@ -804,8 +730,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Empresas_Sucursales_Util_Paises">
-          <End Type="SIGACModel.Util_Paises" Role="Util_Paises" Multiplicity="1" />
-          <End Type="SIGACModel.Empresas_Sucursales" Role="Empresas_Sucursales" Multiplicity="*" />
+          <End Role="Util_Paises" Type="Self.Util_Paises" Multiplicity="1" />
+          <End Role="Empresas_Sucursales" Type="Self.Empresas_Sucursales" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Util_Paises">
               <PropertyRef Name="PaisId" />
@@ -816,8 +742,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Personas_Util_Ciudades">
-          <End Type="SIGACModel.Util_Ciudades" Role="Util_Ciudades" Multiplicity="1" />
-          <End Type="SIGACModel.Personas" Role="Personas" Multiplicity="*" />
+          <End Role="Util_Ciudades" Type="Self.Util_Ciudades" Multiplicity="1" />
+          <End Role="Personas" Type="Self.Personas" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Util_Ciudades">
               <PropertyRef Name="PaisId" />
@@ -832,8 +758,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Personas_Util_Dptos">
-          <End Type="SIGACModel.Util_Dptos" Role="Util_Dptos" Multiplicity="1" />
-          <End Type="SIGACModel.Personas" Role="Personas" Multiplicity="*" />
+          <End Role="Util_Dptos" Type="Self.Util_Dptos" Multiplicity="1" />
+          <End Role="Personas" Type="Self.Personas" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Util_Dptos">
               <PropertyRef Name="PaisId" />
@@ -846,8 +772,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Personas_Util_Paises">
-          <End Type="SIGACModel.Util_Paises" Role="Util_Paises" Multiplicity="1" />
-          <End Type="SIGACModel.Personas" Role="Personas" Multiplicity="*" />
+          <End Role="Util_Paises" Type="Self.Util_Paises" Multiplicity="1" />
+          <End Role="Personas" Type="Self.Personas" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Util_Paises">
               <PropertyRef Name="PaisId" />
@@ -858,8 +784,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Util_Ciudades_Util_Dptos">
-          <End Type="SIGACModel.Util_Dptos" Role="Util_Dptos" Multiplicity="1" />
-          <End Type="SIGACModel.Util_Ciudades" Role="Util_Ciudades" Multiplicity="*" />
+          <End Role="Util_Dptos" Type="Self.Util_Dptos" Multiplicity="1" />
+          <End Role="Util_Ciudades" Type="Self.Util_Ciudades" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Util_Dptos">
               <PropertyRef Name="PaisId" />
@@ -872,8 +798,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Util_Dptos_Util_Paises">
-          <End Type="SIGACModel.Util_Paises" Role="Util_Paises" Multiplicity="1" />
-          <End Type="SIGACModel.Util_Dptos" Role="Util_Dptos" Multiplicity="*" />
+          <End Role="Util_Paises" Type="Self.Util_Paises" Multiplicity="1" />
+          <End Role="Util_Dptos" Type="Self.Util_Dptos" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Util_Paises">
               <PropertyRef Name="PaisId" />
@@ -883,12 +809,87 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityContainer Name="SIGACEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Empresas" EntityType="Self.Empresas" />
+          <EntitySet Name="Empresas_Admon" EntityType="Self.Empresas_Admon" />
+          <EntitySet Name="Empresas_Admon_Cargos" EntityType="Self.Empresas_Admon_Cargos" />
+          <EntitySet Name="Empresas_Sucursales" EntityType="Self.Empresas_Sucursales" />
+          <EntitySet Name="Empresas_Tipos" EntityType="Self.Empresas_Tipos" />
+          <EntitySet Name="Personas" EntityType="Self.Personas" />
+          <EntitySet Name="Util_Ciudades" EntityType="Self.Util_Ciudades" />
+          <EntitySet Name="Util_Dptos" EntityType="Self.Util_Dptos" />
+          <EntitySet Name="Util_Paises" EntityType="Self.Util_Paises" />
+          <AssociationSet Name="FK_Empresas_Admon_Empresas1" Association="Self.FK_Empresas_Admon_Empresas1">
+            <End Role="Empresas" EntitySet="Empresas" />
+            <End Role="Empresas_Admon" EntitySet="Empresas_Admon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empresas_Empresas_Tipos1" Association="Self.FK_Empresas_Empresas_Tipos1">
+            <End Role="Empresas_Tipos" EntitySet="Empresas_Tipos" />
+            <End Role="Empresas" EntitySet="Empresas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empresas_Sucursales_Empresas" Association="Self.FK_Empresas_Sucursales_Empresas">
+            <End Role="Empresas" EntitySet="Empresas" />
+            <End Role="Empresas_Sucursales" EntitySet="Empresas_Sucursales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empresas_Util_Ciudades" Association="Self.FK_Empresas_Util_Ciudades">
+            <End Role="Util_Ciudades" EntitySet="Util_Ciudades" />
+            <End Role="Empresas" EntitySet="Empresas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empresas_Util_Dptos" Association="Self.FK_Empresas_Util_Dptos">
+            <End Role="Util_Dptos" EntitySet="Util_Dptos" />
+            <End Role="Empresas" EntitySet="Empresas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empresas_Util_Paises" Association="Self.FK_Empresas_Util_Paises">
+            <End Role="Util_Paises" EntitySet="Util_Paises" />
+            <End Role="Empresas" EntitySet="Empresas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empresas_Admon_Empresas_Admon_Tipos" Association="Self.FK_Empresas_Admon_Empresas_Admon_Tipos">
+            <End Role="Empresas_Admon_Cargos" EntitySet="Empresas_Admon_Cargos" />
+            <End Role="Empresas_Admon" EntitySet="Empresas_Admon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empresas_Admon_Personas" Association="Self.FK_Empresas_Admon_Personas">
+            <End Role="Personas" EntitySet="Personas" />
+            <End Role="Empresas_Admon" EntitySet="Empresas_Admon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empresas_Sucursales_Util_Ciudades" Association="Self.FK_Empresas_Sucursales_Util_Ciudades">
+            <End Role="Util_Ciudades" EntitySet="Util_Ciudades" />
+            <End Role="Empresas_Sucursales" EntitySet="Empresas_Sucursales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empresas_Sucursales_Util_Dptos" Association="Self.FK_Empresas_Sucursales_Util_Dptos">
+            <End Role="Util_Dptos" EntitySet="Util_Dptos" />
+            <End Role="Empresas_Sucursales" EntitySet="Empresas_Sucursales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empresas_Sucursales_Util_Paises" Association="Self.FK_Empresas_Sucursales_Util_Paises">
+            <End Role="Util_Paises" EntitySet="Util_Paises" />
+            <End Role="Empresas_Sucursales" EntitySet="Empresas_Sucursales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personas_Util_Ciudades" Association="Self.FK_Personas_Util_Ciudades">
+            <End Role="Util_Ciudades" EntitySet="Util_Ciudades" />
+            <End Role="Personas" EntitySet="Personas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personas_Util_Dptos" Association="Self.FK_Personas_Util_Dptos">
+            <End Role="Util_Dptos" EntitySet="Util_Dptos" />
+            <End Role="Personas" EntitySet="Personas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personas_Util_Paises" Association="Self.FK_Personas_Util_Paises">
+            <End Role="Util_Paises" EntitySet="Util_Paises" />
+            <End Role="Personas" EntitySet="Personas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Util_Ciudades_Util_Dptos" Association="Self.FK_Util_Ciudades_Util_Dptos">
+            <End Role="Util_Dptos" EntitySet="Util_Dptos" />
+            <End Role="Util_Ciudades" EntitySet="Util_Ciudades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Util_Dptos_Util_Paises" Association="Self.FK_Util_Dptos_Util_Paises">
+            <End Role="Util_Paises" EntitySet="Util_Paises" />
+            <End Role="Util_Dptos" EntitySet="Util_Dptos" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="SIGACModelStoreContainer" CdmEntityContainer="SIGACEF">
+        <EntityContainerMapping StorageEntityContainer="SIGACModelStoreContainer" CdmEntityContainer="SIGACEntities">
           <EntitySetMapping Name="Empresas">
             <EntityTypeMapping TypeName="SIGACModel.Empresas">
               <MappingFragment StoreEntitySet="Empresas">
@@ -992,37 +993,37 @@
           <EntitySetMapping Name="Util_Ciudades">
             <EntityTypeMapping TypeName="SIGACModel.Util_Ciudades">
               <MappingFragment StoreEntitySet="Util_Ciudades">
-                <ScalarProperty Name="Modified" ColumnName="Modified" />
-                <ScalarProperty Name="GPSUbicacion" ColumnName="GPSUbicacion" />
-                <ScalarProperty Name="Capital" ColumnName="Capital" />
-                <ScalarProperty Name="NombreCiudad" ColumnName="NombreCiudad" />
-                <ScalarProperty Name="CiudadId" ColumnName="CiudadId" />
-                <ScalarProperty Name="DptoId" ColumnName="DptoId" />
                 <ScalarProperty Name="PaisId" ColumnName="PaisId" />
+                <ScalarProperty Name="DptoId" ColumnName="DptoId" />
+                <ScalarProperty Name="CiudadId" ColumnName="CiudadId" />
+                <ScalarProperty Name="NombreCiudad" ColumnName="NombreCiudad" />
+                <ScalarProperty Name="Capital" ColumnName="Capital" />
+                <ScalarProperty Name="GPSUbicacion" ColumnName="GPSUbicacion" />
+                <ScalarProperty Name="Modified" ColumnName="Modified" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Util_Dptos">
             <EntityTypeMapping TypeName="SIGACModel.Util_Dptos">
               <MappingFragment StoreEntitySet="Util_Dptos">
-                <ScalarProperty Name="Modified" ColumnName="Modified" />
-                <ScalarProperty Name="DptoNombre" ColumnName="DptoNombre" />
-                <ScalarProperty Name="DptoId" ColumnName="DptoId" />
                 <ScalarProperty Name="PaisId" ColumnName="PaisId" />
+                <ScalarProperty Name="DptoId" ColumnName="DptoId" />
+                <ScalarProperty Name="DptoNombre" ColumnName="DptoNombre" />
+                <ScalarProperty Name="Modified" ColumnName="Modified" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Util_Paises">
             <EntityTypeMapping TypeName="SIGACModel.Util_Paises">
               <MappingFragment StoreEntitySet="Util_Paises">
-                <ScalarProperty Name="Modified" ColumnName="Modified" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="UN" ColumnName="UN" />
-                <ScalarProperty Name="Web" ColumnName="Web" />
-                <ScalarProperty Name="ISO3" ColumnName="ISO3" />
-                <ScalarProperty Name="ISO2" ColumnName="ISO2" />
-                <ScalarProperty Name="NombrePais" ColumnName="NombrePais" />
                 <ScalarProperty Name="PaisId" ColumnName="PaisId" />
+                <ScalarProperty Name="NombrePais" ColumnName="NombrePais" />
+                <ScalarProperty Name="ISO2" ColumnName="ISO2" />
+                <ScalarProperty Name="ISO3" ColumnName="ISO3" />
+                <ScalarProperty Name="Web" ColumnName="Web" />
+                <ScalarProperty Name="UN" ColumnName="UN" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Modified" ColumnName="Modified" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

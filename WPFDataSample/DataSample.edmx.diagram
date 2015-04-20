@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d5c21cc77d734502a3ac943f87460f2f" Name="Diagram1">
+        <EntityTypeShape EntityType="SIGACModel.Empresas" Width="1.5" PointX="7.5" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIGACModel.Empresas_Admon" Width="1.5" PointX="12.75" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIGACModel.Empresas_Admon_Cargos" Width="1.5" PointX="10.5" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIGACModel.Empresas_Sucursales" Width="1.5" PointX="9.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIGACModel.Empresas_Tipos" Width="1.5" PointX="5.25" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIGACModel.Personas" Width="1.5" PointX="10.5" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIGACModel.Util_Ciudades" Width="1.5" PointX="5.25" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIGACModel.Util_Dptos" Width="1.5" PointX="3" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIGACModel.Util_Paises" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
+        <AssociationConnector Association="SIGACModel.FK_Empresas_Admon_Empresas1" ManuallyRouted="false" />
+        <AssociationConnector Association="SIGACModel.FK_Empresas_Empresas_Tipos1" ManuallyRouted="false" />
+        <AssociationConnector Association="SIGACModel.FK_Empresas_Sucursales_Empresas" ManuallyRouted="false" />
+        <AssociationConnector Association="SIGACModel.FK_Empresas_Util_Ciudades" ManuallyRouted="false" />
+        <AssociationConnector Association="SIGACModel.FK_Empresas_Util_Dptos" ManuallyRouted="false" />
+        <AssociationConnector Association="SIGACModel.FK_Empresas_Util_Paises" ManuallyRouted="false" />
+        <AssociationConnector Association="SIGACModel.FK_Empresas_Admon_Empresas_Admon_Tipos" ManuallyRouted="false" />
+        <AssociationConnector Association="SIGACModel.FK_Empresas_Admon_Personas" ManuallyRouted="false" />
+        <AssociationConnector Association="SIGACModel.FK_Empresas_Sucursales_Util_Ciudades" ManuallyRouted="false" />
+        <AssociationConnector Association="SIGACModel.FK_Empresas_Sucursales_Util_Dptos" ManuallyRouted="false" />
+        <AssociationConnector Association="SIGACModel.FK_Empresas_Sucursales_Util_Paises" ManuallyRouted="false" />
+        <AssociationConnector Association="SIGACModel.FK_Personas_Util_Ciudades" ManuallyRouted="false" />
+        <AssociationConnector Association="SIGACModel.FK_Personas_Util_Dptos" ManuallyRouted="false" />
+        <AssociationConnector Association="SIGACModel.FK_Personas_Util_Paises" ManuallyRouted="false" />
+        <AssociationConnector Association="SIGACModel.FK_Util_Ciudades_Util_Dptos" ManuallyRouted="false" />
+        <AssociationConnector Association="SIGACModel.FK_Util_Dptos_Util_Paises" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

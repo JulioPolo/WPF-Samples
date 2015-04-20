@@ -85,58 +85,58 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DataSample.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSample.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataSample.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataSample.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSample.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Empresas.cs">
+      <DependentUpon>DataSample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Empresas_Admon.cs">
+      <DependentUpon>DataSample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Empresas_Admon_Cargos.cs">
+      <DependentUpon>DataSample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Empresas_Sucursales.cs">
+      <DependentUpon>DataSample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Empresas_Tipos.cs">
+      <DependentUpon>DataSample.tt</DependentUpon>
+    </Compile>
     <Compile Include="MainLoader.xaml.cs">
       <DependentUpon>MainLoader.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Paises.xaml.cs">
+    <Compile Include="formas\Paises.xaml.cs">
       <DependentUpon>Paises.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Personas.cs">
+      <DependentUpon>DataSample.tt</DependentUpon>
+    </Compile>
     <Compile Include="Util_Ciudades.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>DataSample.tt</DependentUpon>
     </Compile>
     <Compile Include="Util_Dptos.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>DataSample.tt</DependentUpon>
     </Compile>
     <Compile Include="Util_Paises.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>DataSample.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Empresas.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Empresas_Admon.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Empresas_Admon_Cargos.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Empresas_form.xaml.cs">
+    <Compile Include="formas\Empresas_form.xaml.cs">
       <DependentUpon>Empresas_form.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Empresas_Sucursales.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Empresas_Tipos.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Personas.cs">
-      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -155,22 +155,22 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Model.edmx">
+    <EntityDeploy Include="DataSample.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSample.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Model.Context.tt">
+    <None Include="DataSample.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model.edmx</DependentUpon>
-      <LastGenOutput>Model.Context.cs</LastGenOutput>
+      <DependentUpon>DataSample.edmx</DependentUpon>
+      <LastGenOutput>DataSample.Context.cs</LastGenOutput>
     </None>
-    <None Include="Model.edmx.diagram">
-      <DependentUpon>Model.edmx</DependentUpon>
+    <None Include="DataSample.edmx.diagram">
+      <DependentUpon>DataSample.edmx</DependentUpon>
     </None>
-    <None Include="Model.tt">
+    <None Include="DataSample.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model.edmx</DependentUpon>
-      <LastGenOutput>Model.cs</LastGenOutput>
+      <DependentUpon>DataSample.edmx</DependentUpon>
+      <LastGenOutput>DataSample.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Empresas.datasource" />
@@ -209,7 +209,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Empresas_form.xaml">
+    <Page Include="formas\Empresas_form.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -217,7 +217,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Paises.xaml">
+    <Page Include="formas\Paises.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -225,9 +225,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="formas\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

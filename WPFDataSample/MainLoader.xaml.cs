@@ -29,5 +29,10 @@ namespace WPFDataSample
             var newWindow = new Paises();
             newWindow.Show();
         }
+
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
