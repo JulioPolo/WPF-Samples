@@ -20,7 +20,7 @@ namespace WPFDataSample
     public partial class Paises : Window
     {
         SIGACEntities db;
-        System.Windows.Data.CollectionViewSource util_PaisesViewSource;
+        CollectionViewSource util_PaisesViewSource;
 
         public Paises()
         {
@@ -30,10 +30,11 @@ namespace WPFDataSample
         private void Paises1_Loaded(object sender, RoutedEventArgs e)
         {
             db = new SIGACEntities();
-            util_PaisesViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("util_PaisesViewSource")));
+            util_PaisesViewSource = ((CollectionViewSource)(this.FindResource("util_PaisesViewSource")));
             // Load data by setting the CollectionViewSource.Source property:
             var query = db.Util_Paises;
             util_PaisesViewSource.Source = query.ToList();
+      
         }
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
@@ -41,11 +42,7 @@ namespace WPFDataSample
             this.Close();
         }
 
-        private void SaveButton_Click(object sender, RoutedEventArgs e)
-        {
-            db.SaveChanges();
-        }
-
+        
         private void Paises_form_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             db = null;
@@ -55,6 +52,16 @@ namespace WPFDataSample
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             //util_PaisesViewSource.View
+        }
+
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            db.SaveChanges();
+        }
+
+        private void Ex(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
