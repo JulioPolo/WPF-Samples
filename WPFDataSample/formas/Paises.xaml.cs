@@ -21,7 +21,7 @@ namespace WPFDataSample
     {
         SIGACEntities db;
         CollectionViewSource util_PaisesViewSource;
-
+        bool IsNewRecord = false;
         public Paises()
         {
             InitializeComponent();
@@ -49,19 +49,43 @@ namespace WPFDataSample
             util_PaisesViewSource = null;
         }
 
-        private void AddButton_Click(object sender, RoutedEventArgs e)
-        {
-            //util_PaisesViewSource.View
-        }
-
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
+            if (IsNewRecord)
+            {
+                util_PaisesViewSource.View.MoveCurrentToLast();
+            }
             db.SaveChanges();
         }
 
-        private void Ex(object sender, RoutedEventArgs e)
+        private void NewButton_Click(object sender, RoutedEventArgs e)
         {
+            CleanForm();
+            
+        }
 
+        private void CleanForm()
+        {
+            paisIdTextBox.Text = "";
+            nombrePaisTextBox.Text = "";
+            iSO2TextBox.Text = "";
+            iSO3TextBox.Text = "";
+            uNTextBox.Text = "";
+            webTextBox.Text = "";
+            phoneTextBox.Text = "";
+            
+            
+            IsNewRecord = true;
+        }
+
+        private void PreviousButton_Click(object sender, RoutedEventArgs e)
+        {
+            util_PaisesViewSource.View.MoveCurrentToPrevious();
+        }
+
+        private void NextButton_Click(object sender, RoutedEventArgs e)
+        {
+            util_PaisesViewSource.View.MoveCurrentToNext();
         }
     }
 }

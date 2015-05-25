@@ -6,12 +6,11 @@
     <Window.Resources>
         <CollectionViewSource x:Key="util_PaisesViewSource" d:DesignSource="{d:DesignInstance {x:Type local:Util_Paises}, CreateList=True}"/>
     </Window.Resources>
-    <Window.DataContext
->
+    <Window.DataContext>
         <local:Util_Paises/>
     </Window.DataContext>
 
-    <Grid Margin="0,0,-6.574,4.678">
+    <Grid Margin="0,0,-6.574,4.678" DataContext="{StaticResource util_PaisesViewSource}">
         <Grid.RowDefinitions>
             <RowDefinition Height="46*"/>
             <RowDefinition Height="31*"/>
@@ -29,25 +28,14 @@
             <ColumnDefinition Width="97*"/>
         </Grid.ColumnDefinitions>
 
-
-        <Grid x:Name="grid6" DataContext="{StaticResource util_PaisesViewSource}" Margin="68,8.913,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.ColumnSpan="2" Height="31" Width="167" Grid.Row="4">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-        </Grid>
-
-        <Button x:Name="NewButton" Content="_Nuevo" Margin="25,0,15.87,44.878" Grid.Row="6" Height="32" VerticalAlignment="Bottom"/>
+        <Button x:Name="NewButton" Content="_Nuevo" Margin="25,0,15.87,44.878" Grid.Row="6" Height="32" VerticalAlignment="Bottom" Click="NewButton_Click"/>
         <Button x:Name="SaveButton" Content="_Guardar" HorizontalAlignment="Left" Margin="10.13,0,0,44.878" Grid.Row="6" Width="75" Click="SaveButton_Click" Height="32" VerticalAlignment="Bottom" Grid.Column="1"/>
         <Button x:Name="ExitButton" Content="Cancelar" Grid.Column="3" Margin="0,0,16.009,44.878" Grid.Row="6" VerticalAlignment="Bottom" Height="29" HorizontalAlignment="Right" Width="75" Click="ExitButton_Click"/>
 
-        <Label Content="Pais Id:" Grid.Column="0" Margin="0,0,15.87,3.913" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="25" Width="44"/>
-        <TextBox x:Name="paisIdTextBox" Margin="5.13,15,0,3.913" Text="{Binding PaisId, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Column="1" HorizontalAlignment="Left" Width="62"/>
+        <Label Content="Pais Id:" Grid.Column="0" Margin="0,0,15.87,3.913" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="25" Width="48"/>
+        <TextBox x:Name="paisIdTextBox" Margin="5.13,15,0,3.913" Text="{Binding PaisId, Mode=OneWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Column="1" HorizontalAlignment="Left" Width="62"/>
 
-        <Label Content="Nombre Pais:" Grid.Column="0" Margin="0,1.087,15.87,4.8" VerticalAlignment="Center" HorizontalAlignment="Right" Height="25" Width="74" Grid.Row="1"/>
+        <Label Content="Nombre Pais:" Grid.Column="0" Margin="0,1.087,15.87,4.8" VerticalAlignment="Center" HorizontalAlignment="Right" Height="25" Width="80" Grid.Row="1"/>
         <TextBox x:Name="nombrePaisTextBox" Grid.Column="1" Height="23" Margin="5.13,2.087,9.009,0" Grid.Row="1" Text="{Binding NombrePais, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
 
         <Label Content="ISO 2:" Grid.Column="0" Margin="0,3.2,15.87,6.026" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right" Width="38" Height="25"/>
@@ -64,5 +52,7 @@
 
         <Label Content="Phone:" Grid.Column="2" Margin="0,6.913,11.139,15.67" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Right" Width="43" Height="25"/>
         <TextBox x:Name="phoneTextBox" Grid.Column="3" Height="23" Margin="1.861,6.913,6.009,0" Grid.Row="4" Text="{Binding Phone, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top"/>
+        <Button x:Name="PreviousButton" Content="&lt;" Grid.Column="2" HorizontalAlignment="Left" Height="32" Margin="10,6,0,0" Grid.Row="6" VerticalAlignment="Top" Width="32" Click="PreviousButton_Click"/>
+        <Button x:Name="NextButton" Content="&gt;" Grid.Column="2" HorizontalAlignment="Left" Height="32" Margin="58,6,0,0" Grid.Row="6" VerticalAlignment="Top" Width="32" Click="NextButton_Click"/>
     </Grid>
 </Window>
